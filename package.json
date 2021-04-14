@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build",
     "install-client": "cd client && cd app && npm install",
-    "heroku-postbuild": "cd client && cd app && npm install && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "start": "node server.js",
-    "client": "cd client && cd app && npm start",
+    "client": "cd client && npm start",
     "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run client\""
   },
   "author": "",
