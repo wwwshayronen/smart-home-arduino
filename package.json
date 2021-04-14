@@ -4,13 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build",
-    "install-client": "cd client && cd app && npm install",
-    "heroku-postbuild": "cd client && npm install && npm run build",
     "start": "node server.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run client\""
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +15,6 @@
     "express": "^4.17.1",
     "johnny-five": "^2.0.0",
     "node-schedule": "^2.0.0",
-    "nodemon": "^2.0.7",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
