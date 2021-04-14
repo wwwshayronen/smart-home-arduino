@@ -1,20 +1,23 @@
 const fetchHook = (action) => {
-  console.log("propsss", action);
   async function fetchData() {
-    const response = await fetch("/api/switch", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        action: action,
-      }),
-    });
-    // console.log("res:", response.json());
-    return response.json();
+    try {
+      const response = await fetch("/api/switch", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          action: action,
+        }),
+      });
+      return response.json();
+    } catch (error) {
+      console.log(error)
+    }   
   }
 
   fetchData();
 };
 
 export default fetchHook;
+
