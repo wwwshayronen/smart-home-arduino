@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+  "start": "webpack-dev-server --mode development --hot --open --port $PORT",
+  "build": "npm i -dev && webpack --mode production",
+  "heroku-postbuild": "npm build"
   },
   "author": "",
   "license": "ISC",
